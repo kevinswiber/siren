@@ -42,7 +42,7 @@
   "class": "siren:category", 
   "body": { "name": "web" },
   "embedded": [
-    { "class": "siren:category:owner", "body": { "id": "sirenadmin" }, "links": [ { "rel": "self", "href": "http://api.siren.io/users/sirenadmin" },
+    { "class": "siren:category:owner", "body": { "id": "sirenadmin" }, "links": [ { "rel": "self", "href": "http://api.siren.io/users/sirenadmin" } ] },
     { "class": "siren:category:events", "href": "http://api.siren.io/users/sirenadmin/categories/web/events" },
     { "class": "siren:category:rules", "href": "http://api.siren.io/users/sirenadmin/categories/web/rules" }
   ],
