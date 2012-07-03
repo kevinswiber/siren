@@ -1,0 +1,63 @@
+{
+  "profile": "http://developer.siren.io/docs",
+  "class": "siren:categories",
+  "body": { "count": 1 },
+  "items": [
+    {
+      "class": "siren:category", 
+      "body": { "name": "web" },
+      "embedded": [
+        {
+          "class": "siren:category:owner", 
+          "body": { "id": "sirenadmin" }, 
+          "links": [ 
+            { "rel": "self", "href": "http://api.siren.io/users/sirenadmin" }
+          ]
+        },
+        { "class": "siren:category:events", "href": "http://api.siren.io/users/sirenadmin/categories/web/events" },
+        { "class": "siren:category:rules", "href": "http://api.siren.io/users/sirenadmin/categories/web/rules" }
+      ],
+      "links": [
+        { "rel": "self", "href": "http://api.siren.io/users/sirenadmin/categories/web" }
+        { "rel": "up", "href": "http://api.siren.io/users/sirenadmin/categories/" }
+      ],
+      "actions": [ 
+        {
+          "class": "siren:event:add", 
+          "href": "http://api.siren.io/users/sirenadmin/categories/web/events", 
+          "method": "POST", 
+          "type": "application/vnd.siren+json",
+          "item": { "body": "", "id": "sirenadmin/web" } 
+        }
+      ]
+    }
+  ],
+  "links": [
+    { "rel": "self", "href": "http://api.siren.io/users/kevinswiber/categories/web" }
+  ]
+}
+
+
+{
+  "class": "siren:category", 
+  "body": { "name": "web" },
+  "embedded": [
+    { "class": "siren:category:owner", "body": { "id": "sirenadmin" }, "links": [ { "rel": "self", "href": "http://api.siren.io/users/sirenadmin" },
+    { "class": "siren:category:events", "href": "http://api.siren.io/users/sirenadmin/categories/web/events" },
+    { "class": "siren:category:rules", "href": "http://api.siren.io/users/sirenadmin/categories/web/rules" }
+  ],
+  "links": [ 
+    { "rel": "self", "href": "http://api.siren.io/users/sirenadmin/categories/web" },
+    { "rel": "up", "href": "http://api.siren.io/users/sirenadmin/categories/" }
+  ],
+  "actions": [ 
+    {
+      "class": "siren:event:add", 
+      "href": "http://api.siren.io/users/sirenadmin/categories/web/events", 
+      "method": "POST", 
+      "type": "application/vnd.siren+json",
+      "item": { "body": "", "id": "sirenadmin/web" } 
+    }
+  ]
+}
+
