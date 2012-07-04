@@ -3,11 +3,11 @@
     "profile": "http://developer.siren.io/docs"
   },
   "class": "siren:categories",
-  "attributes": { "count": 1 },
+  "properties": { "count": 1 },
   "collection": [
     {
       "class": "siren:category", 
-      "attributes": { "name": "web" },
+      "properties": { "name": "web" },
       "entities": [
         {
           "class": "siren:category:owner", 
@@ -42,7 +42,7 @@
 
 {
   "class": "siren:category", 
-  "attributes": { "name": "web" },
+  "properties": { "name": "web" },
   "entities": [
     { "class": "siren:category:owner", "body": { "id": "sirenadmin" }, "links": [ { "rel": "self", "href": "http://api.siren.io/users/sirenadmin" } ] },
     { "class": "siren:category:events", "href": "http://api.siren.io/users/sirenadmin/categories/web/events" },
