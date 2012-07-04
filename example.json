@@ -1,12 +1,14 @@
 {
-  "profile": "http://developer.siren.io/docs",
+  "meta": {
+    "profile": "http://developer.siren.io/docs"
+  },
   "class": "siren:categories",
-  "body": { "count": 1 },
-  "items": [
+  "attributes": { "count": 1 },
+  "collection": [
     {
       "class": "siren:category", 
-      "body": { "name": "web" },
-      "embedded": [
+      "attributes": { "name": "web" },
+      "entities": [
         {
           "class": "siren:category:owner", 
           "body": { "id": "sirenadmin" }, 
@@ -18,7 +20,7 @@
         { "class": "siren:category:rules", "href": "http://api.siren.io/users/sirenadmin/categories/web/rules" }
       ],
       "links": [
-        { "rel": "self", "href": "http://api.siren.io/users/sirenadmin/categories/web" }
+        { "rel": "self", "href": "http://api.siren.io/users/sirenadmin/categories/web" },
         { "rel": "up", "href": "http://api.siren.io/users/sirenadmin/categories/" }
       ],
       "actions": [ 
@@ -27,7 +29,7 @@
           "href": "http://api.siren.io/users/sirenadmin/categories/web/events", 
           "method": "POST", 
           "type": "application/vnd.siren+json",
-          "item": { "body": "", "id": "sirenadmin/web" } 
+          "fields": { "body": "", "id": "sirenadmin/web" } 
         }
       ]
     }
@@ -40,8 +42,8 @@
 
 {
   "class": "siren:category", 
-  "body": { "name": "web" },
-  "embedded": [
+  "attributes": { "name": "web" },
+  "entities": [
     { "class": "siren:category:owner", "body": { "id": "sirenadmin" }, "links": [ { "rel": "self", "href": "http://api.siren.io/users/sirenadmin" } ] },
     { "class": "siren:category:events", "href": "http://api.siren.io/users/sirenadmin/categories/web/events" },
     { "class": "siren:category:rules", "href": "http://api.siren.io/users/sirenadmin/categories/web/rules" }
@@ -56,7 +58,7 @@
       "href": "http://api.siren.io/users/sirenadmin/categories/web/events", 
       "method": "POST", 
       "type": "application/vnd.siren+json",
-      "item": { "body": "", "id": "sirenadmin/web" } 
+      "fields": { "body": "", "id": "sirenadmin/web" } 
     }
   ]
 }
