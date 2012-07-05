@@ -2,22 +2,24 @@
   "meta": {
     "profile": "http://developer.siren.io/docs"
   },
-  "class": "siren:categories",
+  "class": "categories",
   "properties": { "count": 1 },
   "entities": [
     {
-      "class": "siren:category", 
+      "class": "category primary", 
+      "rel": "siren:category-list:item",
       "properties": { "name": "web" },
       "entities": [
         {
-          "class": "siren:category:owner", 
+          "class": "category-owner", 
+          "rel": "siren:category:owner",
           "properties": { "id": "sirenadmin" }, 
           "links": [ 
             { "rel": "self", "href": "http://api.siren.io/users/sirenadmin" }
           ]
         },
-        { "class": "siren:category:events", "href": "http://api.siren.io/users/sirenadmin/categories/web/events" },
-        { "class": "siren:category:rules", "href": "http://api.siren.io/users/sirenadmin/categories/web/rules" }
+        { "class": "events", "rel": "siren:category:events", "href": "http://api.siren.io/users/sirenadmin/categories/web/events" },
+        { "class": "rules", "rel": "siren:category:rules", "href": "http://api.siren.io/users/sirenadmin/categories/web/rules" }
       ],
       "links": [
         { "rel": "self", "href": "http://api.siren.io/users/sirenadmin/categories/web" },
@@ -25,17 +27,19 @@
       ],
       "actions": [ 
         {
-          "class": "siren:event:add", 
+          "class": "event-add", 
           "href": "http://api.siren.io/users/sirenadmin/categories/web/events", 
           "method": "POST", 
           "type": "application/vnd.siren+json",
-          "fields": { "body": "", "id": "sirenadmin/web" } 
+          "fields": [
+            { "name": "body", "type": "text", "maxLength": 250 }
+          ]
         }
       ]
     }
   ],
   "links": [
-    { "rel": "self", "href": "http://api.siren.io/users/kevinswiber/categories/web" }
+    { "rel": "self", "href": "http://api.siren.io/users/kevinswiber/categories" }
   ]
 }
 
@@ -44,12 +48,19 @@
   "meta": {
     "profile": "http://developer.siren.io/docs"
   },
-  "class": "siren:category", 
+  "class": "category", 
   "properties": { "name": "web" },
   "entities": [
-    { "class": "siren:category:owner", "properties": { "id": "sirenadmin" }, "links": [ { "rel": "self", "href": "http://api.siren.io/users/sirenadmin" } ] },
-    { "class": "siren:category:events", "href": "http://api.siren.io/users/sirenadmin/categories/web/events" },
-    { "class": "siren:category:rules", "href": "http://api.siren.io/users/sirenadmin/categories/web/rules" }
+    {
+      "class": "category-owner", 
+      "rel": "siren:category:owner",
+      "properties": { "id": "sirenadmin" }, 
+      "links": [ 
+        { "rel": "self", "href": "http://api.siren.io/users/sirenadmin" }
+      ]
+    },
+    { "class": "events", "rel": "siren:category:events", "href": "http://api.siren.io/users/sirenadmin/categories/web/events" },
+    { "class": "rules", "rel": "siren:category:rules", "href": "http://api.siren.io/users/sirenadmin/categories/web/rules" }
   ],
   "links": [ 
     { "rel": "self", "href": "http://api.siren.io/users/sirenadmin/categories/web" },
@@ -57,12 +68,13 @@
   ],
   "actions": [ 
     {
-      "class": "siren:event:add", 
+      "class": "event-add", 
       "href": "http://api.siren.io/users/sirenadmin/categories/web/events", 
       "method": "POST", 
       "type": "application/vnd.siren+json",
-      "fields": { "body": "", "id": "sirenadmin/web" } 
+      "fields": [
+        { "name": "body", "type": "text", "maxLength": 250 }
+      ]
     }
   ]
 }
-
