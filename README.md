@@ -126,6 +126,10 @@ Embedded sub-entity representations retain all the characteristics of a standard
 
 It's important to note the distinction between link relations and classes.  Link relations define a relationship between two resources.  Classes define a classification of the nature of the element, be it an entity or an action, in its current representation.
 
+###Sub-Entities vs Links
+
+Another distinction is the difference between sub-entities and links.  Sub-entities exist to communicate a relationship between entities, in context.  Links are primarily navigational and communicate ways clients can navigate outside the entity graph.
+
 ##Links
 
 Links represent navigational transitions.  In JSON Siren, links are represented as an array inside the entity, such as ```{ "links": [{ "rel": "self", "href": "http://api.x.io/orders/42"}] }```
