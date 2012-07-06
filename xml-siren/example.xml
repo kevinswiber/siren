@@ -1,0 +1,38 @@
+<entity class="categories">
+        <meta name="profile" content="http://developer.siren.io/docs"/>
+        <property name="count">1</property>
+        <entity class="category primary">
+                <meta name="profile" content="http://developer.siren.io/docs"/>
+                <meta name="author" content="Siren, Inc."/>
+                <property name="name">web</property>
+                <entity class="category-owner" rel="siren:category:owner">
+                        <property name="id">sirenadmin</property>
+                        <link rel="self" href="http://api.siren.io/users/sirenadmin"/>
+                </entity>
+                <entity class="events" rel="siren:category:events" href="http://api.siren.io/users/sirenadmin/categories/web/events" />
+                <entity class="rules" rel="siren:category:rules" href="http://api.siren.io/users/sirenadmin/categories/web/rules" />
+                <link rel="self" href="http://api.siren.io/users/sirenadmin/categories/web"/>
+                <link rel="up" href="http://api.siren.io/users/sirenadmin/categories"/>
+                <action class="event-add" href="http://api.siren.io/users/sirenadmin/categories/web/events" method="POST" type="application/vnd.siren+json">
+                        <field name="body" type="text" maxLength="250"/>
+                </action>
+        </entity>
+        <link rel="self" href="http://api.siren.io/users/kevinswiber/categories"/>
+</entity>
+
+<entity class="category">
+        <meta name="profile" content="http://developer.siren.io/docs"/>
+        <meta name="author" content="Siren, Inc."/>
+        <property name="name">web</property>
+        <entity class="category-owner" rel="siren:category:owner">
+                <property name="id">sirenadmin</property>
+                <link rel="self" href="http://api.siren.io/users/sirenadmin"/>
+        </entity>
+        <entity class="events" rel="siren:category:events" href="http://api.siren.io/users/sirenadmin/categories/web/events" />
+        <entity class="rules" rel="siren:category:rules" href="http://api.siren.io/users/sirenadmin/categories/web/rules" />
+        <link rel="self" href="http://api.siren.io/users/sirenadmin/categories/web"/>
+        <link rel="up" href="http://api.siren.io/users/sirenadmin/categories"/>
+        <action class="event-add" href="http://api.siren.io/users/sirenadmin/categories/web/events" method="POST" type="application/vnd.siren+json">
+                <field name="body" type="text" maxLength="250"/>
+        </action>
+</entity>
