@@ -2,7 +2,7 @@
 
 ##Example
 
-Below is a JSON Siren example of an order, including sub-entities.  The first sub-entity, a collection of products associated with the order, is an embedded link.  Clients may choose to automatically resolve linked sub-entities.  The second sub-entity is an embedded representation of customer information associated with the order.  The example also includes an action to remove the order and a set of links to navigate through a list of orders.
+Below is a JSON Siren example of an order, including sub-entities.  The first sub-entity, a collection of items associated with the order, is an embedded link.  Clients may choose to automatically resolve linked sub-entities.  The second sub-entity is an embedded representation of a status associated with the order.  The example also includes an action to cancel the order and a set of links to navigate through a list of orders.
 
 
 ```
@@ -14,34 +14,36 @@ Below is a JSON Siren example of an order, including sub-entities.  The first su
   },
   "entities": [
     { 
-      "class": "products collection", 
-      "rel": "http://x.io/rels/order-products", 
-      "href": "http://api.x.io/orders/42/products"
+      "class": "items collection", 
+      "rel": "http://x.io/rels/order-items", 
+      "href": "http://api.x.io/orders/42/items"
     },
     {
-      "class": "info",
-      "rel": "http://x.io/rels/customer", 
+      "class": "status",
+      "rel": "http://x.io/rels/order-status", 
       "properties": { 
-        "customerId": "1234", 
-        "name": "Peter Joseph"
+        "value": "pending"
       },
       "links": [
-        { "rel": "self", "href": "http://api.x.io/customers/1234" }
+        { "rel": "self", "href": "http://api.x.io/orders/42/status" }
       ]
     }
   ],
   "actions": [
     {
-      "class": "remove-order",
-      "title": "Remove Order",
-      "method": "DELETE",
-      "href": "http://api.x.io/orders/42"
+      "class": "cancel-order",
+      "title": "Cancel Order",
+      "method": "PUT",
+      "href": "http://api.x.io/orders/42/status",
+      "type": "x-www-form-urlencoded",
+      "fields": [
+        { "name": "value", "type": "hidden", "value": "cancelled" }
+      ]
     }
   ],
   "links": [
     { "rel": "self", "href": "http://api.x.io/orders/42" },
-    { "rel": "next", "href": "http://api.x.io/orders/43" },
-    { "rel": "up", "href": "http://api.x.io/orders" }
+    { "rel": "next", "href": "http://api.x.io/orders/43" }
   ]
 }
 ```
