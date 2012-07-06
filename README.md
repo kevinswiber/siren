@@ -64,12 +64,31 @@ An Entity is a URI-addressable resource that has properties and actions associat
 
 ###Entity
 
-* class (describes the nature of an entity)
-* properties (object)
-* entities (array)
-* links (should include a link to self)
-* actions (array)
-* title (optional, client may ignore)
+####```class```
+
+Describes the nature of an entity's content based on the current representation.  Possible values are implementation-dependent and should be documented.  Must be a value of space-separated tokens.  Optional.
+
+####```properties```
+
+A set of key-value pairs that describe the state of an entity.  In JSON Siren, this is an object such as ```{ "name": "Kevin", "age": 30 }```.  Optional.
+
+####```entities```
+
+A collection of related sub-entities.  If a sub-entity contains an ```href``` value, it should be treated as an embedded link.  Clients may choose to optimistically load embedded links.  If no ```href``` value exists, the sub-entity is an embedded entity representation that contains all the characteristics of a typical entity.  One difference is that a sub-entity may contain a ```rel``` attribute to describe its relationship to the parent entity.
+
+In JSON Siren, this is represented as an array.  Optional.
+
+####```links```
+
+A collection of items that describe navigational links, distinct from entity relationships.  Link items should contain a ```rel``` attribute to describe the relationship and an ```href``` attribute to point to the target URI.  Link relations follow the Web Linking RFC.  Entities should include a link ```rel``` to ```self```.  In JSON Siren, this is represented as ```"links": [{ "rel": "self", "href": "http://api.x.io/orders/1234" }]```  Optional.
+
+####```actions```
+
+A collection of action objects.  See Actions.  Optional
+
+####```title```
+Descriptive text about the entity.  Optional.
+
   
 ###Sub-Entities
 * rel
