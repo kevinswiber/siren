@@ -2,7 +2,7 @@
 
 ##Example
 
-Below is a JSON Siren example of an order, including sub-entities.  The first sub-entity, a collection of items associated with the order, is an embedded link.  Clients may choose to automatically resolve linked sub-entities.  The second sub-entity is an embedded representation of a status associated with the order.  The example also includes an action to cancel the order and a set of links to navigate through a list of orders.
+Below is a JSON Siren example of an order, including sub-entities.  The first sub-entity, a collection of items associated with the order, is an embedded link.  Clients may choose to automatically resolve linked sub-entities.  The second sub-entity is an embedded representation of customer information associated with the order.  The example also includes an action to add items to the order and a set of links to navigate through a list of orders.
 
 
 ```
@@ -20,25 +20,28 @@ Below is a JSON Siren example of an order, including sub-entities.  The first su
       "href": "http://api.x.io/orders/42/items"
     },
     {
-      "class": "info status",
-      "rel": "http://x.io/rels/order-status", 
+      "class": "info customer",
+      "rel": "http://x.io/rels/customer", 
       "properties": { 
-        "value": "pending"
+        "customerId": "pj123",
+        "name": "Peter Joseph"
       },
       "links": [
-        { "rel": "self", "href": "http://api.x.io/orders/42/status" }
+        { "rel": "self", "href": "http://api.x.io/customers/pj123" }
       ]
     }
   ],
   "actions": [
     {
-      "class": "cancel-order",
-      "title": "Cancel Order",
-      "method": "PUT",
-      "href": "http://api.x.io/orders/42/status",
+      "class": "add-item",
+      "title": "Add Item",
+      "method": "POST",
+      "href": "http://api.x.io/orders/42/items",
       "type": "application/x-www-form-urlencoded",
       "fields": [
-        { "name": "value", "type": "hidden", "value": "cancelled" }
+        { "name": "orderNumber", "type": "hidden", "value": "42" },
+        { "name": "productCode", "type": "text" },
+        { "name": "quantity", "type": "number" }
       ]
     }
   ],
@@ -110,6 +113,6 @@ class vs rel
 * type (media type of request body, if one exists. x-www-form-urlencoded on GET)
 * fields
 
-##Design Considerations
+##Usage Considerations
 
-Siren supports a resource design style that doesn't have to be primarily CRUD-based.  A root entity may take ownership of facilitating changes to sub-entities.  Using Siren, it's much easier to provide a task-based interface for your Web API.
+Siren supports a resource design style that doesn't have to be primarily CRUD-based.  A root entity may take ownership of facilitating changes to sub-entities via actions.  Using Siren, it's much easier to provide a task-based interface to your Web API.
