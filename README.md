@@ -184,8 +184,7 @@ Currently, the possible values are:
 ```hidden```, ```text```, ```search```, ```tel```, ```url```, ```email```, ```password```, ```datetime```, ```date```,
 ```month```, ```week```, ```time```, ```datetime-local```, 
 ```number```, ```range```, ```color```, ```checkbox```,
-```radio```, ```file```, ```submit```, ```image```, ```reset```,
-```button```
+```radio```, ```file```, ```submit```, ```image```, ```reset```, ```button```
 
 When missing, the default value is ```text```.  Optional.
 
