@@ -83,36 +83,112 @@ In JSON Siren, this is represented as an array.  Optional.
 
 ####```links```
 
-A collection of items that describe navigational links, distinct from entity relationships.  Link items should contain a ```rel``` attribute to describe the relationship and an ```href``` attribute to point to the target URI.  Link relations follow the Web Linking RFC.  Entities should include a link ```rel``` to ```self```.  In JSON Siren, this is represented as ```"links": [{ "rel": "self", "href": "http://api.x.io/orders/1234" }]```  Optional.
+A collection of items that describe navigational links, distinct from entity relationships.  Link items should contain a ```rel``` attribute to describe the relationship and an ```href``` attribute to point to the target URI.  Entities should include a link ```rel``` to ```self```.  In JSON Siren, this is represented as ```"links": [{ "rel": "self", "href": "http://api.x.io/orders/1234" }]```  Optional.
 
 ####```actions```
 
-A collection of action objects.  See Actions.  Optional
+A collection of action objects, represented in JSON Siren as an array such as ```{ "actions": [{ ... }] }```.  See Actions.  Optional
 
 ####```title```
 Descriptive text about the entity.  Optional.
 
   
 ###Sub-Entities
-* rel
 
-##Linking
+Sub-entities can be expressed as either an embedded link or an embedded representation.  In JSON Siren, sub-entities are represented by an ```entities``` array, such as ```{ "entities": [{ ... }] }```.
 
-Links represent navigational transitions.  Related entities are included inline as sub-entities of the entity itself.
+####Embedded Link
 
-###Relationships
+A sub-entity that's an embedded link may contain the following:
 
-class vs rel
+#####```class```
+
+Describes the nature of an entity's content based on the current representation.  Possible values are implementation-dependent and should be documented.  Must be a value of space-separated tokens.  Optional.
+
+#####```rel```  Required.
+
+Defines the relationship of the sub-entity to its parent, per [Web Linking (RFC5899)](http://tools.ietf.org/html/rfc5988).
+
+#####```href```
+
+The URI of the linked sub-entity.  Required.
+
+####Embedded Representation
+
+Embedded sub-entity representations retain all the characteristics of a standard entity, but may also contain a ```rel``` attribute describing the relationship of the sub-entity to its parent.
+
+###Classes vs. Relationships
+
+It's important to note the distinction between link relations and classes.  Link relations define a relationship between two resources.  Classes define a classification of the nature of the element, be it an entity or an action, in its current representation.
+
+##Links
+
+Links represent navigational transitions.  In JSON Siren, links are represented as an array inside the entity, such as ```{ "links": [{ "rel": "self", "href": "http://api.x.io/orders/42"}] }```
+
+Links may contain the following attributes:
+
+###```rel```
+
+Defines the relationship of the link to its entity, per [Web Linking (RFC5899)](http://tools.ietf.org/html/rfc5988).  Required.
+
+###```href```
+
+The URI of the linked resource.  Required.
 
 ##Actions
 
-* class
-* title (optional, client may ignore)
-* method
-* href
-* type (media type of request body, if one exists. x-www-form-urlencoded on GET)
-* fields
+Actions show available behaviors an entity exposes.
+
+###```class```
+
+Describes the nature of an action based on the current representation.  Possible values are implementation-dependent and should be documented.  Must be a value of space-separated tokens.  Optional.
+
+###```method```
+
+An enumerated attribute mapping to a protocol method.  For HTTP, these values may be ```GET```, ```PUT```, ```POST```, ```DELETE```, or ```PATCH```.  As new methods are introduced, this list can be extended.  If this attribute is omitted, ```GET``` should be assumed.  Optional.
+
+###```href```
+
+The URI of the action.  Required.
+
+###```title```
+
+Descriptive text about the action.  Optional.
+
+### ```type```
+
+The encoding type for the request.  When omitted and the ```fields``` attribute exists, the default value is ```application/x-www-form-urlencoded```.  Optional.
+
+### ```fields```
+
+A collection of fields, expressed as an array of objects in JSON Siren such as ```{ "fields" : [{ ... }] }```.  See Fields.  Optional.
+
+###Fields
+
+Fields represent controls inside of actions.  They may contain these attributes:
+
+####name
+
+A name describing the control.  Required.
+
+####type
+
+The field type.  This may include any of the [input types](http://www.w3.org/TR/html5/single-page.html#the-input-element) specified in HTML5.
+
+Currently, the possible values are:
+
+```hidden```, ```text```, ```search```, ```tel```, ```url```, ```email```, ```password```, ```datetime```, ```date```,
+```month```, ```week```, ```time```, ```datetime-local```, 
+```number```, ```range```, ```color```, ```checkbox```,
+```radio```, ```file```, ```submit```, ```image```, ```reset```,
+```button```
+
+When missing, the default value is ```text```.  Optional.
+
+####value
+
+A value assigned to the field.  Optional.
 
 ##Usage Considerations
 
-Siren supports a resource design style that doesn't have to be primarily CRUD-based.  A root entity may take ownership of facilitating changes to sub-entities via actions.  Using Siren, it's much easier to provide a task-based interface to your Web API.
+Siren supports a resource design style that doesn't have to be primarily CRUD-based.  A root entity may take ownership of facilitating changes to sub-entities via actions.  Using Siren allows you to easily provide a task-based interface through your Web API.
