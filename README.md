@@ -10,7 +10,8 @@ Below is a JSON Siren example of an order, including sub-entities.  The first su
   "class": "order",
   "properties": { 
       "orderNumber": 42, 
-      "itemCount": 3 
+      "itemCount": 3,
+      "status": "pending"
   },
   "entities": [
     { 
@@ -19,7 +20,7 @@ Below is a JSON Siren example of an order, including sub-entities.  The first su
       "href": "http://api.x.io/orders/42/items"
     },
     {
-      "class": "status",
+      "class": "info status",
       "rel": "http://x.io/rels/order-status", 
       "properties": { 
         "value": "pending"
@@ -35,7 +36,7 @@ Below is a JSON Siren example of an order, including sub-entities.  The first su
       "title": "Cancel Order",
       "method": "PUT",
       "href": "http://api.x.io/orders/42/status",
-      "type": "x-www-form-urlencoded",
+      "type": "application/x-www-form-urlencoded",
       "fields": [
         { "name": "value", "type": "hidden", "value": "cancelled" }
       ]
@@ -43,6 +44,7 @@ Below is a JSON Siren example of an order, including sub-entities.  The first su
   ],
   "links": [
     { "rel": "self", "href": "http://api.x.io/orders/42" },
+    { "rel": "previous", "href": "http://api.x.io/orders/41" },
     { "rel": "next", "href": "http://api.x.io/orders/43" }
   ]
 }
@@ -62,7 +64,7 @@ An Entity is a URI-addressable resource that has properties and actions associat
 
 ###Entity
 
-* class (describes the nature of the entity)
+* class (describes the nature of an entity)
 * properties (object)
 * entities (array)
 * links (should include a link to self)
@@ -88,3 +90,7 @@ class vs rel
 * href
 * type (media type of request body, if one exists. x-www-form-urlencoded on GET)
 * fields
+
+##Design Considerations
+
+Siren supports a resource design style that doesn't have to be primarily CRUD-based.  A root entity may take ownership of facilitating changes to sub-entities.  Using Siren, it's much easier to provide a task-based interface for your Web API.
