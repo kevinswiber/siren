@@ -55,7 +55,7 @@ Below is a JSON Siren example of an order, including sub-entities.  The first su
 
 ##Introduction
 
-Siren is a hypermedia specification for representing entities.  As HTML is used for visually representing documents on a Web site, Siren is a format for presenting entities via a Web API.  Siren offers structures to communicate information about entities, actions for executing state transitions, and links for client navigation.  
+Siren is a hypermedia specification for representing entities.  As HTML is used for visually representing documents on a Web site, Siren is a specification for presenting entities via a Web API.  Siren offers structures to communicate information about entities, actions for executing state transitions, and links for client navigation.  
 
 Siren is intended to be a general specification of a generic media type that can be applied to other types that are not inherently hypermedia-powered.  The initial implementation is JSON Siren.  Other implementations, such as XML Siren, may also be implemented using the Siren specification.
 
