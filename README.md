@@ -187,7 +187,7 @@ Currently, the possible values are:
 ```number```, ```range```, ```color```, ```checkbox```,
 ```radio```, ```file```, ```submit```, ```image```, ```reset```, ```button```
 
-When missing, the default value is ```text```.  Optional.
+When missing, the default value is ```text```.  Serialization of these fields will depend on the value of the action's ```type``` attribute.  Optional.
 
 ####value
 
