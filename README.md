@@ -1,5 +1,7 @@
 #Siren: a hypermedia specification for representing entities
 
+Note: Your input is appreciated.  Feel free to file a GitHub Issue, a Pull Request, or contact me on Twitter [@kevinswiber](https://twitter.com/kevinswiber).  Thank you!
+
 ##Example
 
 Below is a JSON Siren example of an order, including sub-entities.  The first sub-entity, a collection of items associated with the order, is an embedded link.  Clients may choose to automatically resolve linked sub-entities.  The second sub-entity is an embedded representation of customer information associated with the order.  The example also includes an action to add items to the order and a set of links to navigate through a list of orders.
