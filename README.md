@@ -12,7 +12,7 @@ The media type for JSON Siren is ```application/vnd.siren+json```.
 
 ```json
 {
-  "class": "order",
+  "class": [ "order" ],
   "properties": { 
       "orderNumber": 42, 
       "itemCount": 3,
@@ -20,13 +20,13 @@ The media type for JSON Siren is ```application/vnd.siren+json```.
   },
   "entities": [
     { 
-      "class": "items collection", 
-      "rel": "http://x.io/rels/order-items", 
+      "class": [ "items", "collection" ], 
+      "rel": [ "http://x.io/rels/order-items" ], 
       "href": "http://api.x.io/orders/42/items"
     },
     {
-      "class": "info customer",
-      "rel": "http://x.io/rels/customer", 
+      "class": [ "info", "customer" ],
+      "rel": [ "http://x.io/rels/customer" ], 
       "properties": { 
         "customerId": "pj123",
         "name": "Peter Joseph"
@@ -38,7 +38,7 @@ The media type for JSON Siren is ```application/vnd.siren+json```.
   ],
   "actions": [
     {
-      "class": "add-item",
+      "class": [ "add-item" ],
       "title": "Add Item",
       "method": "POST",
       "href": "http://api.x.io/orders/42/items",
@@ -51,9 +51,9 @@ The media type for JSON Siren is ```application/vnd.siren+json```.
     }
   ],
   "links": [
-    { "rel": "self", "href": "http://api.x.io/orders/42" },
-    { "rel": "previous", "href": "http://api.x.io/orders/41" },
-    { "rel": "next", "href": "http://api.x.io/orders/43" }
+    { "rel": [ "self" ], "href": "http://api.x.io/orders/42" },
+    { "rel": [ "previous" ], "href": "http://api.x.io/orders/41" },
+    { "rel": [ "next" ], "href": "http://api.x.io/orders/43" }
   ]
 }
 ```
@@ -78,7 +78,7 @@ Sub-entities that are embedded links MUST contain an ```href``` attribute with a
 
 ####```class```
 
-Describes the nature of an entity's content based on the current representation.  Possible values are implementation-dependent and should be documented.  Must be a value of space-separated tokens.  Optional.
+Describes the nature of an entity's content based on the current representation.  Possible values are implementation-dependent and should be documented.  MUST be an array of strings.  Optional.
 
 ####```properties```
 
@@ -112,11 +112,11 @@ A sub-entity that's an embedded link may contain the following:
 
 #####```class```
 
-Describes the nature of an entity's content based on the current representation.  Possible values are implementation-dependent and should be documented.  Must be a value of space-separated tokens.  Optional.
+Describes the nature of an entity's content based on the current representation.  Possible values are implementation-dependent and should be documented.  MUST be an array of strings.  Optional.
 
 #####```rel```
 
-Defines the relationship of the sub-entity to its parent, per [Web Linking (RFC5899)](http://tools.ietf.org/html/rfc5988).  Required.
+Defines the relationship of the sub-entity to its parent, per [Web Linking (RFC5899)](http://tools.ietf.org/html/rfc5988).  MUST be an array of strings.  Required.
 
 #####```href```
 
@@ -136,13 +136,13 @@ Another distinction is the difference between sub-entities and links.  Sub-entit
 
 ##Links
 
-Links represent navigational transitions.  In JSON Siren, links are represented as an array inside the entity, such as ```{ "links": [{ "rel": "self", "href": "http://api.x.io/orders/42"}] }```
+Links represent navigational transitions.  In JSON Siren, links are represented as an array inside the entity, such as ```{ "links": [{ "rel": [ "self" ], "href": "http://api.x.io/orders/42"}] }```
 
 Links may contain the following attributes:
 
 ###```rel```
 
-Defines the relationship of the link to its entity, per [Web Linking (RFC5899)](http://tools.ietf.org/html/rfc5988).  Required.
+Defines the relationship of the link to its entity, per [Web Linking (RFC5899)](http://tools.ietf.org/html/rfc5988).  MUST be an array of strings. Required.
 
 ###```href```
 
@@ -154,7 +154,7 @@ Actions show available behaviors an entity exposes.
 
 ###```class```
 
-Describes the nature of an action based on the current representation.  Possible values are implementation-dependent and should be documented.  Must be a value of space-separated tokens.  Optional.
+Describes the nature of an action based on the current representation.  Possible values are implementation-dependent and should be documented.  Must be a value of space-separated tokens.  MUST be an array of strings.  Optional.
 
 ###```method```
 
