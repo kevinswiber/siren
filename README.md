@@ -38,7 +38,7 @@ The media type for JSON Siren is ```application/vnd.siren+json```.
   ],
   "actions": [
     {
-      "class": [ "add-item" ],
+      "name": "add-item",
       "title": "Add Item",
       "method": "POST",
       "href": "http://api.x.io/orders/42/items",
@@ -152,9 +152,13 @@ The URI of the linked resource.  Required.
 
 Actions show available behaviors an entity exposes.
 
+###```name```
+
+A string that identifies the action to be performed.  Required.
+
 ###```class```
 
-Describes the nature of an action based on the current representation.  Possible values are implementation-dependent and should be documented.  Must be a value of space-separated tokens.  MUST be an array of strings.  Optional.
+Describes the nature of an action based on the current representation.  Possible values are implementation-dependent and should be documented.  MUST be an array of strings.  Optional.
 
 ###```method```
 
