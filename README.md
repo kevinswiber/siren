@@ -32,7 +32,7 @@ The media type for JSON Siren is ```application/vnd.siren+json```.
         "name": "Peter Joseph"
       },
       "links": [
-        { "rel": "self", "href": "http://api.x.io/customers/pj123" }
+        { "rel": [ "self" ], "href": "http://api.x.io/customers/pj123" }
       ]
     }
   ],
