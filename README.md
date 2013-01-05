@@ -68,11 +68,11 @@ All examples in this document are in the JSON Siren format.
 
 ##Entities
 
-An Entity is a URI-addressable resource that has properties and actions associated with it.  It may contain sub-entities and navigational links.
+An Entity is a resource that may have properties and actions associated with it.  It may contain sub-entities and navigational links.
 
-Root entities and sub-entities that are embedded representations MUST contain a ```links``` collection with at least one item contain a ```rel``` value of ```self``` and an ```href``` attribute with a value of the entity's URI.
+Root entities and sub-entities that are embedded representations SHOULD contain a ```links``` collection with at least one item, containing a ```rel``` value of ```self``` and an ```href``` attribute with a value of the entity's URI.
 
-Sub-entities that are embedded links MUST contain an ```href``` attribute with a value of its URI.
+Sub-entities that are embedded links SHOULD contain an ```href``` attribute with a value of its URI.
 
 ###Entity
 
