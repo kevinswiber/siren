@@ -8,7 +8,7 @@ Group Discussion: [https://groups.google.com/forum/#!forum/siren-hypermedia](htt
 
 Below is a JSON Siren example of an order, including sub-entities.  The first sub-entity, a collection of items associated with the order, is an embedded link.  Clients may choose to automatically resolve linked sub-entities.  The second sub-entity is an embedded representation of customer information associated with the order.  The example also includes an action to add items to the order and a set of links to navigate through a list of orders.
 
-The media type for JSON Siren is ```application/vnd.siren+json```.
+The media type for JSON Siren is `application/vnd.siren+json`.
 
 ```json
 {
@@ -70,61 +70,61 @@ All examples in this document are in the JSON Siren format.
 
 An Entity is a URI-addressable resource that has properties and actions associated with it.  It may contain sub-entities and navigational links.
 
-Root entities and sub-entities that are embedded representations MUST contain a ```links``` collection with at least one item contain a ```rel``` value of ```self``` and an ```href``` attribute with a value of the entity's URI.
+Root entities and sub-entities that are embedded representations MUST contain a `links` collection with at least one item contain a `rel` value of `self` and an `href` attribute with a value of the entity's URI.
 
-Sub-entities that are embedded links MUST contain an ```href``` attribute with a value of its URI.
+Sub-entities that are embedded links MUST contain an `href` attribute with a value of its URI.
 
 ###Entity
 
-####```class```
+####`class`
 
 Describes the nature of an entity's content based on the current representation.  Possible values are implementation-dependent and should be documented.  MUST be an array of strings.  Optional.
 
-####```properties```
+####`properties`
 
-A set of key-value pairs that describe the state of an entity.  In JSON Siren, this is an object such as ```{ "name": "Kevin", "age": 30 }```.  Optional.
+A set of key-value pairs that describe the state of an entity.  In JSON Siren, this is an object such as `{ "name": "Kevin", "age": 30 }`.  Optional.
 
-####```entities```
+####`entities`
 
-A collection of related sub-entities.  If a sub-entity contains an ```href``` value, it should be treated as an embedded link.  Clients may choose to optimistically load embedded links.  If no ```href``` value exists, the sub-entity is an embedded entity representation that contains all the characteristics of a typical entity.  One difference is that a sub-entity MUST contain a ```rel``` attribute to describe its relationship to the parent entity.
+A collection of related sub-entities.  If a sub-entity contains an `href` value, it should be treated as an embedded link.  Clients may choose to optimistically load embedded links.  If no `href` value exists, the sub-entity is an embedded entity representation that contains all the characteristics of a typical entity.  One difference is that a sub-entity MUST contain a `rel` attribute to describe its relationship to the parent entity.
 
 In JSON Siren, this is represented as an array.  Optional.
 
-####```links```
+####`links`
 
-A collection of items that describe navigational links, distinct from entity relationships.  Link items should contain a ```rel``` attribute to describe the relationship and an ```href``` attribute to point to the target URI.  Entities should include a link ```rel``` to ```self```.  In JSON Siren, this is represented as ```"links": [{ "rel": "self", "href": "http://api.x.io/orders/1234" }]```  Optional.
+A collection of items that describe navigational links, distinct from entity relationships.  Link items should contain a `rel` attribute to describe the relationship and an `href` attribute to point to the target URI.  Entities should include a link `rel` to `self`.  In JSON Siren, this is represented as `"links": [{ "rel": "self", "href": "http://api.x.io/orders/1234" }]`  Optional.
 
-####```actions```
+####`actions`
 
-A collection of action objects, represented in JSON Siren as an array such as ```{ "actions": [{ ... }] }```.  See Actions.  Optional
+A collection of action objects, represented in JSON Siren as an array such as `{ "actions": [{ ... }] }`.  See Actions.  Optional
 
-####```title```
+####`title`
 Descriptive text about the entity.  Optional.
 
   
 ###Sub-Entities
 
-Sub-entities can be expressed as either an embedded link or an embedded representation.  In JSON Siren, sub-entities are represented by an ```entities``` array, such as ```{ "entities": [{ ... }] }```.
+Sub-entities can be expressed as either an embedded link or an embedded representation.  In JSON Siren, sub-entities are represented by an `entities` array, such as `{ "entities": [{ ... }] }`.
 
 ####Embedded Link
 
 A sub-entity that's an embedded link may contain the following:
 
-#####```class```
+#####`class`
 
 Describes the nature of an entity's content based on the current representation.  Possible values are implementation-dependent and should be documented.  MUST be an array of strings.  Optional.
 
-#####```rel```
+#####`rel`
 
 Defines the relationship of the sub-entity to its parent, per [Web Linking (RFC5899)](http://tools.ietf.org/html/rfc5988).  MUST be an array of strings.  Required.
 
-#####```href```
+#####`href`
 
 The URI of the linked sub-entity.  Required.
 
 ####Embedded Representation
 
-Embedded sub-entity representations retain all the characteristics of a standard entity, but MUST also contain a ```rel``` attribute describing the relationship of the sub-entity to its parent.
+Embedded sub-entity representations retain all the characteristics of a standard entity, but MUST also contain a `rel` attribute describing the relationship of the sub-entity to its parent.
 
 ###Classes vs. Relationships
 
@@ -136,15 +136,15 @@ Another distinction is the difference between sub-entities and links.  Sub-entit
 
 ##Links
 
-Links represent navigational transitions.  In JSON Siren, links are represented as an array inside the entity, such as ```{ "links": [{ "rel": [ "self" ], "href": "http://api.x.io/orders/42"}] }```
+Links represent navigational transitions.  In JSON Siren, links are represented as an array inside the entity, such as `{ "links": [{ "rel": [ "self" ], "href": "http://api.x.io/orders/42"}] }`
 
 Links may contain the following attributes:
 
-###```rel```
+###`rel`
 
 Defines the relationship of the link to its entity, per [Web Linking (RFC5899)](http://tools.ietf.org/html/rfc5988).  MUST be an array of strings. Required.
 
-###```href```
+###`href`
 
 The URI of the linked resource.  Required.
 
@@ -152,33 +152,33 @@ The URI of the linked resource.  Required.
 
 Actions show available behaviors an entity exposes.
 
-###```name```
+###`name`
 
 A string that identifies the action to be performed.  Required.
 
-###```class```
+###`class`
 
 Describes the nature of an action based on the current representation.  Possible values are implementation-dependent and should be documented.  MUST be an array of strings.  Optional.
 
-###```method```
+###`method`
 
-An enumerated attribute mapping to a protocol method.  For HTTP, these values may be ```GET```, ```PUT```, ```POST```, ```DELETE```, or ```PATCH```.  As new methods are introduced, this list can be extended.  If this attribute is omitted, ```GET``` should be assumed.  Optional.
+An enumerated attribute mapping to a protocol method.  For HTTP, these values may be `GET`, `PUT`, `POST`, `DELETE`, or `PATCH`.  As new methods are introduced, this list can be extended.  If this attribute is omitted, `GET` should be assumed.  Optional.
 
-###```href```
+###`href`
 
 The URI of the action.  Required.
 
-###```title```
+###`title`
 
 Descriptive text about the action.  Optional.
 
-### ```type```
+### `type`
 
-The encoding type for the request.  When omitted and the ```fields``` attribute exists, the default value is ```application/x-www-form-urlencoded```.  Optional.
+The encoding type for the request.  When omitted and the `fields` attribute exists, the default value is `application/x-www-form-urlencoded`.  Optional.
 
-### ```fields```
+### `fields`
 
-A collection of fields, expressed as an array of objects in JSON Siren such as ```{ "fields" : [{ ... }] }```.  See Fields.  Optional.
+A collection of fields, expressed as an array of objects in JSON Siren such as `{ "fields" : [{ ... }] }`.  See Fields.  Optional.
 
 ###Fields
 
@@ -194,12 +194,12 @@ The field type.  This may include any of the [input types](http://www.w3.org/TR/
 
 Currently, the possible values are:
 
-```hidden```, ```text```, ```search```, ```tel```, ```url```, ```email```, ```password```, ```datetime```, ```date```,
-```month```, ```week```, ```time```, ```datetime-local```, 
-```number```, ```range```, ```color```, ```checkbox```,
-```radio```, ```file```, ```submit```, ```image```, ```reset```, ```button```
+`hidden`, `text`, `search`, `tel`, `url`, `email`, `password`, `datetime`, `date`,
+`month`, `week`, `time`, `datetime-local`, 
+`number`, `range`, `color`, `checkbox`,
+`radio`, `file`, `submit`, `image`, `reset`, `button`
 
-When missing, the default value is ```text```.  Serialization of these fields will depend on the value of the action's ```type``` attribute.  Optional.
+When missing, the default value is `text`.  Serialization of these fields will depend on the value of the action's `type` attribute.  Optional.
 
 ####value
 
