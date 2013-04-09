@@ -207,7 +207,7 @@ A value assigned to the field.  Optional.
 
 ####Any standard HTML validation attributes
 
-Optional.  See the [Validation][validation] section for more info.
+Optional.  See the [Validation](#validation) section for more info.
 
 ###Validation
 
