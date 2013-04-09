@@ -205,6 +205,30 @@ When missing, the default value is `text`.  Serialization of these fields will d
 
 A value assigned to the field.  Optional.
 
+####Any standard HTML validation attributes
+
+Optional.  See the [Validation][validation] section for more info.
+
+###Validation
+
+A Siren client can use a field's type for validating Siren properties.  Additional validation can be specified on a Siren Action's field using standard HTML5 [Validation-related Attributes](https://developer.mozilla.org/en-US/docs/HTML/HTML5/Constraint_validation#Validation-related_attributes).
+
+Currently, the possible properties are:
+
+`pattern`, `min`, `max`, `required`, `step`, ``maxlength`
+
+Here are some examples of how these properties could be used
+
+```
+fields: [
+	{name: 'username', type: 'text', pattern: '.{5,10}',  required: true},
+	{name: 'age', type: 'number', min: 18},
+	{name: 'email', type: 'email'},
+	{name: 'password', type: 'text', pattern: '^(?=.*\d)(?=.*[a-zA-Z]).{4,8}$'},
+	{name: 'items', type: 'number', step: 3},
+]
+```
+
 ##Usage Considerations
 
 Siren supports a resource design style that doesn't have to be primarily CRUD-based.  A root entity may take ownership of facilitating changes to sub-entities via actions.  Using Siren allows you to easily provide a task-based interface through your Web API.
