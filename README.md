@@ -149,6 +149,10 @@ Defines the relationship of the link to its entity, per [Web Linking (RFC5899)](
 
 The URI of the linked resource.  Required.
 
+###`title`
+
+Text describing the nature of a link.
+
 ##Actions
 
 Actions show available behaviors an entity exposes.
