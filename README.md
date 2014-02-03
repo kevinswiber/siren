@@ -1,8 +1,9 @@
 #Siren: a hypermedia specification for representing entities
 
-Note: Your input is appreciated.  Feel free to file a GitHub Issue, a Pull Request, or contact me on Twitter [@kevinswiber](https://twitter.com/kevinswiber).  Thank you!
+Your input is appreciated.  Feel free to file a GitHub Issue, a Pull Request, or contact us.  Thank you!
 
-Group Discussion: [https://groups.google.com/forum/#!forum/siren-hypermedia](https://groups.google.com/forum/#!forum/siren-hypermedia)
+- [Official Siren Google Group](https://groups.google.com/forum/#!forum/siren-hypermedia)
+- Kevin on Twitter [@kevinswiber](https://twitter.com/kevinswiber)
 
 ##Example
 
