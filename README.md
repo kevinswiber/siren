@@ -206,6 +206,10 @@ When missing, the default value is `text`.  Serialization of these fields will d
 
 A value assigned to the field.  Optional.
 
+####title
+
+Textual annotation of a field.  Clients may use this as a label.
+
 ##Usage Considerations
 
 Siren supports a resource design style that doesn't have to be primarily CRUD-based.  A root entity may take ownership of facilitating changes to sub-entities via actions.  Using Siren allows you to easily provide a task-based interface through your Web API.
