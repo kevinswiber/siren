@@ -151,7 +151,7 @@ The URI of the linked resource.  Required.
 
 ###`title`
 
-Text describing the nature of a link.
+Text describing the nature of a link.  Optional.
 
 ##Actions
 
