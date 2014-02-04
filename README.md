@@ -208,7 +208,7 @@ A value assigned to the field.  Optional.
 
 ####title
 
-Textual annotation of a field.  Clients may use this as a label.
+Textual annotation of a field.  Clients may use this as a label.  Optional.
 
 ##Usage Considerations
 
