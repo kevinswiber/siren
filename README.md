@@ -198,7 +198,7 @@ Currently, the possible values are:
 `hidden`, `text`, `search`, `tel`, `url`, `email`, `password`, `datetime`, `date`,
 `month`, `week`, `time`, `datetime-local`, 
 `number`, `range`, `color`, `checkbox`,
-`radio`, `file`, `submit`, `image`, `reset`, `button`
+`radio`, `file`, `image`, `reset`, `button`
 
 When missing, the default value is `text`.  Serialization of these fields will depend on the value of the action's `type` attribute. See [`type`](#type) under Actions, above. Optional.
 
