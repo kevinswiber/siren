@@ -191,9 +191,7 @@ A name describing the control.  Required.
 
 ####type
 
-The field type.  This may include any of the [input types](http://www.w3.org/TR/html5/single-page.html#the-input-element) specified in HTML5.
-
-Currently, the possible values are:
+The input type of the field. This may include any of the following [input types](http://www.w3.org/TR/html5/single-page.html#the-input-element) specified in HTML5:
 
 `hidden`, `text`, `search`, `tel`, `url`, `email`, `password`, `datetime`, `date`,
 `month`, `week`, `time`, `datetime-local`, 
