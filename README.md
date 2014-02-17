@@ -197,14 +197,12 @@ A name describing the control.  Required.
 
 ####type
 
-The field type.  This may include any of the [input types](http://www.w3.org/TR/html5/single-page.html#the-input-element) specified in HTML5.
-
-Currently, the possible values are:
+The input type of the field. This may include any of the following [input types](http://www.w3.org/TR/html5/single-page.html#the-input-element) specified in HTML5:
 
 `hidden`, `text`, `search`, `tel`, `url`, `email`, `password`, `datetime`, `date`,
 `month`, `week`, `time`, `datetime-local`, 
 `number`, `range`, `color`, `checkbox`,
-`radio`, `file`, `submit`, `image`, `reset`, `button`
+`radio`, `file`, `image`, `reset`, `button`
 
 When missing, the default value is `text`.  Serialization of these fields will depend on the value of the action's `type` attribute. See [`type`](#type) under Actions, above. Optional.
 
