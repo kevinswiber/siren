@@ -1,8 +1,11 @@
 #Siren: a hypermedia specification for representing entities
 
-Note: Your input is appreciated.  Feel free to file a GitHub Issue, a Pull Request, or contact me on Twitter [@kevinswiber](https://twitter.com/kevinswiber).  Thank you!
+__Current version: 0.6.0__
 
-Group Discussion: [https://groups.google.com/forum/#!forum/siren-hypermedia](https://groups.google.com/forum/#!forum/siren-hypermedia)
+Your input is appreciated.  Feel free to file a GitHub Issue, a Pull Request, or contact us.  Thank you!
+
+- [Official Siren Google Group](https://groups.google.com/forum/#!forum/siren-hypermedia)
+- Kevin on Twitter [@kevinswiber](https://twitter.com/kevinswiber)
 
 ##Example
 
@@ -70,7 +73,7 @@ All examples in this document are in the JSON Siren format.
 
 An Entity is a URI-addressable resource that has properties and actions associated with it.  It may contain sub-entities and navigational links.
 
-Root entities and sub-entities that are embedded representations MUST contain a `links` collection with at least one item contain a `rel` value of `self` and an `href` attribute with a value of the entity's URI.
+Root entities and sub-entities that are embedded representations SHOULD contain a `links` collection with at least one item contain a `rel` value of `self` and an `href` attribute with a value of the entity's URI.
 
 Sub-entities that are embedded links MUST contain an `href` attribute with a value of its URI.
 
@@ -92,7 +95,7 @@ In JSON Siren, this is represented as an array.  Optional.
 
 ####`links`
 
-A collection of items that describe navigational links, distinct from entity relationships.  Link items should contain a `rel` attribute to describe the relationship and an `href` attribute to point to the target URI.  Entities should include a link `rel` to `self`.  In JSON Siren, this is represented as `"links": [{ "rel": "self", "href": "http://api.x.io/orders/1234" }]`  Optional.
+A collection of items that describe navigational links, distinct from entity relationships.  Link items should contain a `rel` attribute to describe the relationship and an `href` attribute to point to the target URI.  Entities should include a link `rel` to `self`.  In JSON Siren, this is represented as `"links": [{ "rel": ["self"], "href": "http://api.x.io/orders/1234" }]`  Optional.
 
 ####`actions`
 
@@ -148,6 +151,10 @@ Defines the relationship of the link to its entity, per [Web Linking (RFC5899)](
 
 The URI of the linked resource.  Required.
 
+###`title`
+
+Text describing the nature of a link.  Optional.
+
 ##Actions
 
 Actions show available behaviors an entity exposes.
@@ -190,14 +197,12 @@ A name describing the control.  Required.
 
 ####type
 
-The field type.  This may include any of the [input types](http://www.w3.org/TR/html5/single-page.html#the-input-element) specified in HTML5.
-
-Currently, the possible values are:
+The input type of the field. This may include any of the following [input types](http://www.w3.org/TR/html5/single-page.html#the-input-element) specified in HTML5:
 
 `hidden`, `text`, `search`, `tel`, `url`, `email`, `password`, `datetime`, `date`,
 `month`, `week`, `time`, `datetime-local`, 
 `number`, `range`, `color`, `checkbox`,
-`radio`, `file`, `submit`, `image`, `reset`, `button`
+`radio`, `file`, `image`, `reset`, `button`
 
 When missing, the default value is `text`.  Serialization of these fields will depend on the value of the action's `type` attribute. See [`type`](#type) under Actions, above. Optional.
 
@@ -205,29 +210,9 @@ When missing, the default value is `text`.  Serialization of these fields will d
 
 A value assigned to the field.  Optional.
 
-####Any standard HTML validation attributes
+####title
 
-Optional.  See the [Validation](#validation) section for more info.
-
-###Validation
-
-A Siren client can use a field's type for validating Siren properties.  Additional validation can be specified on a Siren Action's field using standard HTML5 [Validation-related Attributes](https://developer.mozilla.org/en-US/docs/HTML/HTML5/Constraint_validation#Validation-related_attributes).
-
-Currently, the possible properties are:
-
-`pattern`, `min`, `max`, `required`, `step`, ``maxlength`
-
-Here are some examples of how these properties could be used
-
-```
-fields: [
-	{name: 'username', type: 'text', pattern: '.{5,10}',  required: true},
-	{name: 'age', type: 'number', min: 18},
-	{name: 'email', type: 'email'},
-	{name: 'password', type: 'text', pattern: '^(?=.*\d)(?=.*[a-zA-Z]).{4,8}$'},
-	{name: 'items', type: 'number', step: 3},
-]
-```
+Textual annotation of a field.  Clients may use this as a label.  Optional.
 
 ##Usage Considerations
 
