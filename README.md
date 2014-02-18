@@ -104,6 +104,7 @@ A collection of items that describe navigational links, distinct from entity rel
 
 A collection of action objects, represented in JSON Siren as an array such as `{ "actions": [{ ... }] }`.  See Actions.  Optional
 
+
 ####`title`
 Descriptive text about the entity.  Optional.
 
