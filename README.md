@@ -23,12 +23,12 @@ The media type for JSON Siren is `application/vnd.siren+json`.
   },
   "entities": [
     {
-      "name": "items",
+      "id": "items",
       "rel": [ "http://x.io/rels/order-items" ],
       "href": "http://api.x.io/orders/42/items"
     },
     {
-      "name": "customer",
+      "id": "customer",
       "rel": [ "http://x.io/rels/customer" ],
       "entity": {
         "class": [ "info", "customer" ],
@@ -116,9 +116,9 @@ Sub-entities can be expressed as either an embedded link or an embedded represen
 
 A sub-entity that's an embedded link may contain the following:
 
-#####`name`
+#####`id`
 
-The name of the sub-entity.  Optional.
+The id of the sub-entity.  Optional.
 
 #####`rel`
 
