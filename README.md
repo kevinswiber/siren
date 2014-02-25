@@ -22,12 +22,14 @@ The media type for JSON Siren is `application/vnd.siren+json`.
       "status": "pending"
   },
   "entities": [
-    { 
+    {
+      "id": "items",
       "class": [ "items", "collection" ], 
       "rel": [ "http://x.io/rels/order-items" ], 
       "href": "http://api.x.io/orders/42/items"
     },
     {
+      "id": "customerInfo",
       "class": [ "info", "customer" ],
       "rel": [ "http://x.io/rels/customer" ], 
       "properties": { 
