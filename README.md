@@ -113,6 +113,9 @@ Sub-entities can be expressed as either an embedded link or an embedded represen
 
 A sub-entity that's an embedded link may contain the following:
 
+#####`id`
+Identifies the sub-entity relative to the current parent entity.  If an `id` is provided it MUST be unique to the parent entity.  Optional.
+
 #####`class`
 
 Describes the nature of an entity's content based on the current representation.  Possible values are implementation-dependent and should be documented.  MUST be an array of strings.  Optional.
