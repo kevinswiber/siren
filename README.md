@@ -1,6 +1,6 @@
 #Siren: a hypermedia specification for representing entities
 
-__Current version: 0.6.0__
+__Current version: 0.6.1__
 
 Your input is appreciated.  Feel free to file a GitHub Issue, a Pull Request, or contact us.  Thank you!
 
@@ -202,7 +202,7 @@ The input type of the field. This may include any of the following [input types]
 `hidden`, `text`, `search`, `tel`, `url`, `email`, `password`, `datetime`, `date`,
 `month`, `week`, `time`, `datetime-local`, 
 `number`, `range`, `color`, `checkbox`,
-`radio`, `file`, `image`, `reset`, `button`
+`radio`, `file`, `image`, `button`
 
 When missing, the default value is `text`.  Serialization of these fields will depend on the value of the action's `type` attribute. See [`type`](#type) under Actions, above. Optional.
 
