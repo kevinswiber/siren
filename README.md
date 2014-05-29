@@ -1,6 +1,6 @@
 #Siren: a hypermedia specification for representing entities
 
-__Current version: 0.6.0__
+__Current version: 0.6.1__
 
 Your input is appreciated.  Feel free to file a GitHub Issue, a Pull Request, or contact us.  Thank you!
 
