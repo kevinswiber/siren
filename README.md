@@ -149,7 +149,7 @@ Links may contain the following attributes:
 
 ###`rel`
 
-Defines the relationship of the link to its entity, per [Web Linking (RFC5899)](http://tools.ietf.org/html/rfc5988).  MUST be an array of strings. Required.
+Defines the relationship of the link to its entity, per [Web Linking (RFC5988)](http://tools.ietf.org/html/rfc5988).  MUST be an array of strings. Required.
 
 ###`href`
 
@@ -161,7 +161,7 @@ Text describing the nature of a link.  Optional.
 
 ###`type`
 
-Defines media type of the linked resource, per [Web Linking (RFC5899)](http://tools.ietf.org/html/rfc5988).  Optional.
+Defines media type of the linked resource, per [Web Linking (RFC5988)](http://tools.ietf.org/html/rfc5988).  Optional.
 
 ##Actions
 
