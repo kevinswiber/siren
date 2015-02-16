@@ -70,7 +70,7 @@ All examples in this document are in the JSON Siren format.
 
 An Entity is a URI-addressable resource that has properties and actions associated with it.  It may contain sub-entities and navigational links.
 
-Root entities and sub-entities that are embedded representations MUST contain a ```links``` collection with at least one item contain a ```rel``` value of ```self``` and an ```href``` attribute with a value of the entity's URI.
+Root entities and sub-entities that are embedded representations SHOULD contain a ```links``` collection with at least one item containing a ```rel``` value of ```self``` and an ```href``` attribute with a value of the entity's URI.
 
 Sub-entities that are embedded links MUST contain an ```href``` attribute with a value of its URI.
 
@@ -86,7 +86,7 @@ A set of key-value pairs that describe the state of an entity.  In JSON Siren, t
 
 ####```entities```
 
-A collection of related sub-entities.  If a sub-entity contains an ```href``` value, it should be treated as an embedded link.  Clients may choose to optimistically load embedded links.  If no ```href``` value exists, the sub-entity is an embedded entity representation that contains all the characteristics of a typical entity.  One difference is that a sub-entity MUST contain a ```rel``` attribute to describe its relationship to the parent entity.
+A collection of related sub-entities.  If a sub-entity contains an ```href``` value, it should be treated as an embedded link.  Clients may choose to optimistically load embedded links.  If no ```href``` value exists, the sub-entity is an embedded entity representation that contains all the characteristics of a typical entity.
 
 In JSON Siren, this is represented as an array.  Optional.
 
@@ -124,7 +124,7 @@ The URI of the linked sub-entity.  Required.
 
 ####Embedded Representation
 
-Embedded sub-entity representations retain all the characteristics of a standard entity, but MUST also contain a ```rel``` attribute describing the relationship of the sub-entity to its parent.
+Embedded sub-entity representations retain all the characteristics of a standard entity.
 
 ###Classes vs. Relationships
 
