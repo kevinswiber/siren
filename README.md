@@ -151,6 +151,10 @@ Links may contain the following attributes:
 
 Defines the relationship of the link to its entity, per [Web Linking (RFC5988)](http://tools.ietf.org/html/rfc5988).  MUST be an array of strings. Required.
 
+###`class`
+
+Describes aspects of the link based on the current representation.  Possible values are implementation-dependent and should be documented.  MUST be an array of strings.  Optional.
+
 ###`href`
 
 The URI of the linked resource.  Required.
@@ -202,6 +206,10 @@ Fields represent controls inside of actions.  They may contain these attributes:
 ####name
 
 A name describing the control.  Required.
+
+###`class`
+
+Describes aspects of the field based on the current representation.  Possible values are implementation-dependent and should be documented.  MUST be an array of strings.  Optional.
 
 ####type
 
