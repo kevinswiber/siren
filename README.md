@@ -230,6 +230,10 @@ A value assigned to the field.  Optional.
 
 Textual annotation of a field.  Clients may use this as a label.  Optional.
 
+####cardinality
+
+Indicates the cardinality of the field. Valid values are `optional`, `required`. When missing, the default value is `required`.
+
 ##Usage Considerations
 
 Siren supports a resource design style that doesn't have to be primarily CRUD-based.  A root entity may take ownership of facilitating changes to sub-entities via actions.  Using Siren allows you to easily provide a task-based interface through your Web API.
