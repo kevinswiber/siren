@@ -232,7 +232,7 @@ Textual annotation of a field.  Clients may use this as a label.  Optional.
 
 ####cardinality
 
-Indicates the cardinality of the field. Valid values are `optional`, `required`. When missing, the default value is `required`.
+Indicates the cardinality of the field. Valid values are `optional`, `required`. When missing, the cardinality of the field is undefined.  Optional.
 
 ##Usage Considerations
 
