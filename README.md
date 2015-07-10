@@ -218,7 +218,7 @@ The input type of the field. This may include any of the following [input types]
 `hidden`, `text`, `search`, `tel`, `url`, `email`, `password`, `datetime`, `date`,
 `month`, `week`, `time`, `datetime-local`, 
 `number`, `range`, `color`, `checkbox`,
-`radio`, `file`, `image`, `button`
+`radio`, `file` 
 
 When missing, the default value is `text`.  Serialization of these fields will depend on the value of the action's `type` attribute. See [`type`](#type) under Actions, above. Optional.
 
