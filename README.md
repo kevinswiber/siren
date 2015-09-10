@@ -173,7 +173,11 @@ Actions show available behaviors an entity exposes.
 
 ###`name`
 
-A string that identifies the action to be performed.  Required.
+A string that identifies the action to be performed. Required.
+
+####Uniqueness Constraint
+
+Action names **MUST** be unique within the set of actions for an entity. The behaviour of clients when parsing a Siren document that violates this constraint is _undefined_.
 
 ###`class`
 
