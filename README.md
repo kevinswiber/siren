@@ -173,7 +173,7 @@ Actions show available behaviors an entity exposes.
 
 ###`name`
 
-A string that identifies the action to be performed. Required.
+A string that identifies the action to be performed.  Required.
 
 ####Uniqueness Constraint
 
