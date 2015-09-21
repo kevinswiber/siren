@@ -129,6 +129,9 @@ The URI of the linked sub-entity.  Required.
 
 Defines media type of the linked sub-entity, per [Web Linking (RFC5899)](http://tools.ietf.org/html/rfc5988).  Optional.
 
+#####`title`
+Descriptive text about the entity.  Optional.
+
 ####Embedded Representation
 
 Embedded sub-entity representations retain all the characteristics of a standard entity, but MUST also contain a `rel` attribute describing the relationship of the sub-entity to its parent.
