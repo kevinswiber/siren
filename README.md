@@ -95,7 +95,7 @@ In JSON Siren, this is represented as an array.  Optional.
 
 ####`links`
 
-A collection of items that describe navigational links, distinct from entity relationships.  Link items should contain a `rel` attribute to describe the relationship and an `href` attribute to point to the target URI.  Entities should include a link `rel` to `self`.  In JSON Siren, this is represented as `"links": [{ "rel": ["self"], "href": "http://api.x.io/orders/1234" }]`  Optional.
+A collection of items that describe navigational links, distinct from entity relationships.  Link items should contain a `rel` attribute to describe the relationship and an `href` attribute to point to the target URI.  Entities should include a link `rel` to `self`.  In JSON Siren, this is represented as `"links": [{ "rel": ["self"], "href": "http://api.x.io/orders/1234" }]`  Required.
 
 ####`actions`
 
