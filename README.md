@@ -205,7 +205,7 @@ Fields represent controls inside of actions.  They may contain these attributes:
 
 ####name
 
-A name describing the control.  Required.
+A name describing the control.  Field names MUST be unique within the set of fields for an action. The behaviour of clients when parsing a Siren document that violates this constraint is undefined.  Required.
 
 ###`class`
 
