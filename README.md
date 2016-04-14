@@ -208,7 +208,34 @@ Fields represent controls inside of actions.  They may contain these attributes:
 
 ####name
 
-A name describing the control.  Field names MUST be unique within the set of fields for an action. The behaviour of clients when parsing a Siren document that violates this constraint is undefined.  Required.
+A name describing the control.  Field names MUST be unique within the set of fields for an action. The behaviour of clients when parsing a Siren document that violates this constraint is undefined.
+
+When a request body contains a nested object, this object must be described using dot-seperated field names.
+To clarify this, take the following action to add an order-line as an example:
+
+	"actions": [{
+		"name": "add-order-line",
+		"title": "Add Order Line",
+		"method": "POST",
+		"type": "application/json",
+		"fields": [
+			{ "name": "price.amount", "type": "number"},
+			{ "name": "price.currency", "type": "text"},
+			{ "name": "quantity", "type": "number"}
+		]
+	}]
+
+The dot-seperated field names correspond with the following request body:
+
+	{
+		"price": {
+			"amount" : 123.4,
+			"currency": "EUR"
+		},
+		"quantity": 2
+	}
+
+Required.
 
 ###`class`
 
