@@ -49,7 +49,19 @@ The media type for JSON Siren is `application/vnd.siren+json`.
       "fields": [
         { "name": "orderNumber", "type": "hidden", "value": "42" },
         { "name": "productCode", "type": "text" },
-        { "name": "quantity", "type": "number" }
+        { "name": "quantity", "type": "number" },
+        { "name": "color", "type": "radio", "title": "Choose a Color", 
+          "value": [
+            { "title": "The Color Red", "value": "red" },
+            { "title": "The Color Green", "value": "green", "selected": true }
+          ]
+        },
+        { "name": "color", "type": "checkbox", "title": "Choose a Color", 
+          "value": [
+            { "title": "Bells included", "value": "bells", "selected": true },
+            { "title": "Whistles included", "value": "whistles", "selected": true }
+          ]
+        }
       ]
     }
   ],
@@ -225,13 +237,29 @@ The input type of the field. This may include any of the following [input types]
 
 When missing, the default value is `text`.  Serialization of these fields will depend on the value of the action's `type` attribute. See [`type`](#type) under Actions, above. Optional.
 
-####value
-
-A value assigned to the field.  Optional.
-
 ####title
 
 Textual annotation of a field.  Clients may use this as a label.  Optional.
+
+####value
+
+A value assigned to the field.  May be a scalar value or a list of value objects. Optional.
+
+#####Value Objects
+
+Value objects represent multiple selectable field values. Use in conjunction with field `"type" = "radio"` and `"type" = "checkbox"` to express that zero, one or many out of several possible values may be sent back to the server.
+
+#####title
+
+Textual description of a field value. Optional.
+
+#####value
+
+Possible value for the field. Required.
+
+#####selected
+
+A value object with a `"selected" = true` attribute indicates that this value should be considered preselected by the client. When missing, the default value is `false`. Optional.
 
 ##Usage Considerations
 
