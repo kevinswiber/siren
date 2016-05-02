@@ -222,7 +222,7 @@ Fields represent controls inside of actions.  They may contain these attributes:
 
 A name describing the control.  Field names MUST be unique within the set of fields for an action. The behaviour of clients when parsing a Siren document that violates this constraint is undefined.  Required.
 
-###`class`
+####class
 
 Describes aspects of the field based on the current representation.  Possible values are implementation-dependent and should be documented.  MUST be an array of strings.  Optional.
 
@@ -247,17 +247,17 @@ A value assigned to the field.  May be a scalar value or a list of value objects
 
 #####Value Objects
 
-Value objects represent multiple selectable field values. Use in conjunction with field `"type" = "radio"` and `"type" = "checkbox"` to express that zero, one or many out of several possible values may be sent back to the server.
+Value objects represent multiple selectable field values. Use in conjunction with field `"type" = "radio"` and `"type" = "checkbox"` to express that zero, one or many out of several possible values may be sent back to the server. Value objects may contain these attributes:
 
-#####title
+######title
 
 Textual description of a field value. Optional.
 
-#####value
+######value
 
 Possible value for the field. Required.
 
-#####selected
+######selected
 
 A value object with a `"selected" = true` attribute indicates that this value should be considered preselected by the client. When missing, the default value is `false`. Optional.
 
