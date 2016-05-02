@@ -56,7 +56,7 @@ The media type for JSON Siren is `application/vnd.siren+json`.
             { "title": "The Color Green", "value": "green", "selected": true }
           ]
         },
-        { "name": "color", "type": "checkbox", "title": "Choose a Color", 
+        { "name": "color", "type": "checkbox", "title": "Choose Accessories", 
           "value": [
             { "title": "Bells included", "value": "bells", "selected": true },
             { "title": "Whistles included", "value": "whistles", "selected": true }
