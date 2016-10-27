@@ -157,6 +157,14 @@
                 "name"
             ],
             "properties": {
+                "max": {
+                    "description": "A string or number describing the maximum value among the allowed ranges of values for this field.",
+                    "type": [ "string", "number" ]
+                },
+                "min": {
+                    "description": "A string or number describing the minimum value among the allowed ranges of values for this field.",
+                    "type": [ "string", "number" ]
+                },
                 "name": {
                     "description": "A name describing the control. Field names MUST be unique within the set of fields for an action. The behaviour of clients when parsing a Siren document that violates this constraint is undefined.",
                     "type": "string"
