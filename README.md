@@ -150,23 +150,23 @@ Links represent navigational transitions.  In JSON Siren, links are represented 
 
 Links may contain the following attributes:
 
-###`rel`
+####`rel`
 
 Defines the relationship of the link to its entity, per [Web Linking (RFC5988)](http://tools.ietf.org/html/rfc5988).  MUST be an array of strings. Required.
 
-###`class`
+####`class`
 
 Describes aspects of the link based on the current representation.  Possible values are implementation-dependent and should be documented.  MUST be an array of strings.  Optional.
 
-###`href`
+####`href`
 
 The URI of the linked resource.  Required.
 
-###`title`
+####`title`
 
 Text describing the nature of a link.  Optional.
 
-###`type`
+####`type`
 
 Defines media type of the linked resource, per [Web Linking (RFC5988)](http://tools.ietf.org/html/rfc5988).  Optional.
 
@@ -174,31 +174,31 @@ Defines media type of the linked resource, per [Web Linking (RFC5988)](http://to
 
 Actions show available behaviors an entity exposes.
 
-###`name`
+####`name`
 
 A string that identifies the action to be performed.  Action names MUST be unique within the set of actions for an entity. The behaviour of clients when parsing a Siren document that violates this constraint is undefined.  Required.
 
-###`class`
+####`class`
 
 Describes the nature of an action based on the current representation.  Possible values are implementation-dependent and should be documented.  MUST be an array of strings.  Optional.
 
-###`method`
+####`method`
 
 An enumerated attribute mapping to a protocol method.  For HTTP, these values may be `GET`, `PUT`, `POST`, `DELETE`, or `PATCH`.  As new methods are introduced, this list can be extended.  If this attribute is omitted, `GET` should be assumed.  Optional.
 
-###`href`
+####`href`
 
 The URI of the action.  Required.
 
-###`title`
+####`title`
 
 Descriptive text about the action.  Optional.
 
-### `type`
+#### `type`
 
 The encoding type for the request.  When omitted and the `fields` attribute exists, the default value is `application/x-www-form-urlencoded`.  Optional.
 
-### `fields`
+#### `fields`
 
 A collection of fields, expressed as an array of objects in JSON Siren such as `{ "fields" : [{ ... }] }`.  See Fields.  Optional.
 
@@ -206,15 +206,15 @@ A collection of fields, expressed as an array of objects in JSON Siren such as `
 
 Fields represent controls inside of actions.  They may contain these attributes:
 
-####name
+####`name`
 
 A name describing the control.  Field names MUST be unique within the set of fields for an action. The behaviour of clients when parsing a Siren document that violates this constraint is undefined.  Required.
 
-###`class`
+####`class`
 
 Describes aspects of the field based on the current representation.  Possible values are implementation-dependent and should be documented.  MUST be an array of strings.  Optional.
 
-####type
+####`type`
 
 The input type of the field. This may include any of the following [input types](http://www.w3.org/TR/html5/single-page.html#the-input-element) specified in HTML5:
 
@@ -225,11 +225,11 @@ The input type of the field. This may include any of the following [input types]
 
 When missing, the default value is `text`.  Serialization of these fields will depend on the value of the action's `type` attribute. See [`type`](#type) under Actions, above. Optional.
 
-####value
+####`value`
 
 A value assigned to the field.  Optional.
 
-####title
+####`title`
 
 Textual annotation of a field.  Clients may use this as a label.  Optional.
 
