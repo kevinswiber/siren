@@ -17,9 +17,18 @@ The media type for JSON Siren is `application/vnd.siren+json`.
 {
   "class": [ "order" ],
   "properties": { 
-      "orderNumber": 42, 
-      "itemCount": 3,
-      "status": "pending"
+      "orderNumber": {
+        "title": "Order number",
+        "value": 42
+      },
+      "itemCount": {
+        "title:" "Items ordered",
+        "value": 3
+      },
+      "status": {
+        "title": "Order status",
+        "pending"
+      }
   },
   "entities": [
     { 
