@@ -119,7 +119,7 @@ Describes the nature of an entity's content based on the current representation.
 
 #####`rel`
 
-Defines the relationship of the sub-entity to its parent, per [Web Linking (RFC5899)](http://tools.ietf.org/html/rfc5988).  MUST be an array of strings.  Required.
+Defines the relationship of the sub-entity to its parent, per [Web Linking (RFC5988)](http://tools.ietf.org/html/rfc5988).  MUST be an array of strings.  Required.
 
 #####`href`
 
@@ -127,7 +127,7 @@ The URI of the linked sub-entity.  Required.
 
 #####`type`
 
-Defines media type of the linked sub-entity, per [Web Linking (RFC5899)](http://tools.ietf.org/html/rfc5988).  Optional.
+Defines media type of the linked sub-entity, per [Web Linking (RFC5988)](http://tools.ietf.org/html/rfc5988).  Optional.
 
 #####`title`
 Descriptive text about the entity.  Optional.
