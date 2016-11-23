@@ -64,7 +64,7 @@
                     "description": "Defines the relationship of the sub-entity to its parent, per Web Linking (RFC5899).",
                     "type": "array",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/definitions/RelValue"
                     },
                     "minItems": 1
                 },
@@ -95,7 +95,7 @@
                             "description": "Defines the relationship of the sub-entity to its parent, per Web Linking (RFC5899).",
                             "type": "array",
                             "items": {
-                                "type": "string"
+                                "$ref": "#/definitions/RelValue"
                             },
                             "minItems": 1
                         }
@@ -250,7 +250,7 @@
                     "description": "Defines the relationship of the link to its entity, per Web Linking (RFC5988).",
                     "type": "array",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/definitions/RelValue"
                     }
                 },
                 "href": {
@@ -263,6 +263,99 @@
                     "type": "string"
                 }
             }
+        },
+        "RelValue": {
+               "anyOf": [
+                {
+                    "type": "string",
+                    "format": "uri"
+                },
+                {
+                    "type": "string",
+                    "enum": [
+                        "about",
+                        "alternate",
+                        "appendix",
+                        "archives",
+                        "author",
+                        "blocked-by",
+                        "bookmark",
+                        "canonical",
+                        "chapter",
+                        "collection",
+                        "contents",
+                        "convertedFrom",
+                        "copyright",
+                        "create-form",
+                        "current",
+                        "derivedfrom",
+                        "describedby",
+                        "describes",
+                        "disclosure",
+                        "dns-prefetch",
+                        "duplicate",
+                        "edit",
+                        "edit-form",
+                        "edit-media",
+                        "enclosure",
+                        "first",
+                        "glossary",
+                        "help",
+                        "hosts",
+                        "hub",
+                        "icon",
+                        "index",
+                        "item",
+                        "last",
+                        "latest-version",
+                        "license",
+                        "lrdd",
+                        "memento",
+                        "monitor",
+                        "monitor-group",
+                        "next",
+                        "next-archive",
+                        "nofollow",
+                        "noreferrer",
+                        "original",
+                        "payment",
+                        "pingback",
+                        "preconnect",
+                        "predecessor-version",
+                        "prefetch",
+                        "preload",
+                        "prerender",
+                        "prev",
+                        "preview",
+                        "previous",
+                        "prev-archive",
+                        "privacy-policy",
+                        "profile",
+                        "related",
+                        "restconf",
+                        "replies",
+                        "search",
+                        "section",
+                        "self",
+                        "service",
+                        "start",
+                        "stylesheet",
+                        "subsection",
+                        "successor-version",
+                        "tag",
+                        "terms-of-service",
+                        "timegate",
+                        "timemap",
+                        "type",
+                        "up",
+                        "version-history",
+                        "via",
+                        "webmention",
+                        "working-copy",
+                        "working-copy-of"
+                    ]
+                }
+            ]
         }
     }
 }
