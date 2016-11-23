@@ -206,6 +206,14 @@ A collection of fields, expressed as an array of objects in JSON Siren such as `
 
 Fields represent controls inside of actions.  They may contain these attributes:
 
+####max
+
+A string or number describing the maximum value among the allowed range of values.  This property can only apply to a field with a linear or periodic domain.  Optional.
+
+####min
+
+A string or number describing the minimum value arong the allowed range of values.  This property can only apply to a field with a linear or periodic domain.  Optional.
+
 ####name
 
 A name describing the control.  Field names MUST be unique within the set of fields for an action. The behaviour of clients when parsing a Siren document that violates this constraint is undefined.  Required.
