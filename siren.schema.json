@@ -125,6 +125,13 @@
                 "method": {
                     "description": "An enumerated attribute mapping to a protocol method. For HTTP, these values may be GET, PUT, POST, DELETE, or PATCH. As new methods are introduced, this list can be extended. If this attribute is omitted, GET should be assumed.",
                     "type": "string",
+                    "enum": [
+                        "DELETE",
+                        "GET",
+                        "PATCH",
+                        "POST",
+                        "PUT"
+                    ],
                     "default": "GET"
                 },
                 "href": {
