@@ -119,7 +119,7 @@ Describes the nature of an entity's content based on the current representation.
 
 #####`rel`
 
-Defines the relationship of the sub-entity to its parent, per [Web Linking (RFC5988)](http://tools.ietf.org/html/rfc5988).  MUST be an array of strings.  Required.
+Defines the relationship of the sub-entity to its parent, per [Web Linking (RFC5988)](http://tools.ietf.org/html/rfc5988) and [Link Relations](http://www.iana.org/assignments/link-relations/link-relations.xhtml).  MUST be an array of strings.  Required.
 
 #####`href`
 
@@ -152,7 +152,7 @@ Links may contain the following attributes:
 
 ###`rel`
 
-Defines the relationship of the link to its entity, per [Web Linking (RFC5988)](http://tools.ietf.org/html/rfc5988).  MUST be an array of strings. Required.
+Defines the relationship of the link to its entity, per [Web Linking (RFC5988)](http://tools.ietf.org/html/rfc5988) and [Link Relations](http://www.iana.org/assignments/link-relations/link-relations.xhtml).  MUST be an array of strings. Required.
 
 ###`class`
 
