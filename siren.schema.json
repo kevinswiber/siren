@@ -158,11 +158,11 @@
             ],
             "properties": {
                 "max": {
-                    "description": "A string or number describing the maximum value among the allowed ranges of values for this field.",
+                    "description": "A string or number describing the maximum value among the allowed ranges of values for this field. This property can only apply to a field with a linear or periodic domain.",
                     "type": [ "string", "number" ]
                 },
                 "min": {
-                    "description": "A string or number describing the minimum value among the allowed ranges of values for this field.",
+                    "description": "A string or number describing the minimum value among the allowed ranges of values for this field. This property can only apply to a field with a linear or periodic domain.",
                     "type": [ "string", "number" ]
                 },
                 "name": {
