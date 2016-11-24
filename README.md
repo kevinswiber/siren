@@ -47,9 +47,10 @@ The media type for JSON Siren is `application/vnd.siren+json`.
       "href": "http://api.x.io/orders/42/items",
       "type": "application/x-www-form-urlencoded",
       "fields": [
-        { "name": "orderNumber", "type": "hidden", "value": "42" },
-        { "name": "productCode", "type": "text" },
-        { "name": "quantity", "type": "number" }
+        { "name": "orderNumber", "type": "hidden", "value": "42", "cardinality": "required" },
+        { "name": "productCode", "type": "text", "cardinality": "required" },
+        { "name": "quantity", "type": "number", "cardinality": "required" }
+        { "name": "deliveryNotes", "type": "text", "cardinality": "optional" },
       ]
     }
   ],
@@ -232,6 +233,10 @@ A value assigned to the field.  Optional.
 ####title
 
 Textual annotation of a field.  Clients may use this as a label.  Optional.
+
+####cardinality
+
+Indicates the cardinality of the field. Valid values are `optional`, `required`. When missing, the cardinality of the field is undefined.  Optional.
 
 ##Usage Considerations
 
