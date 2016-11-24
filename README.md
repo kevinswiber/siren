@@ -22,7 +22,7 @@ The media type for JSON Siren is `application/vnd.siren+json`.
         "value": 42
       },
       "itemCount": {
-        "title:" "Items ordered",
+        "title": "Items ordered",
         "value": 3
       },
       "status": {
