@@ -16,27 +16,30 @@ The media type for JSON Siren is `application/vnd.siren+json`.
 ```json
 {
   "class": [ "order" ],
-  "properties": { 
-      "orderNumber": 42, 
+  "properties": {
+      "orderNumber": 42,
       "itemCount": 3,
       "status": "pending"
   },
   "entities": [
-    { 
-      "class": [ "items", "collection" ], 
-      "rel": [ "http://x.io/rels/order-items" ], 
+    {
+      "id": "items",
+      "rel": [ "http://x.io/rels/order-items" ],
       "href": "http://api.x.io/orders/42/items"
     },
     {
-      "class": [ "info", "customer" ],
-      "rel": [ "http://x.io/rels/customer" ], 
-      "properties": { 
-        "customerId": "pj123",
-        "name": "Peter Joseph"
-      },
-      "links": [
-        { "rel": [ "self" ], "href": "http://api.x.io/customers/pj123" }
-      ]
+      "id": "customer",
+      "rel": [ "http://x.io/rels/customer" ],
+      "entity": {
+        "class": [ "info", "customer" ],
+        "properties": {
+          "customerId": "pj123",
+          "name": "Peter Joseph"
+        },
+        "links": [
+          { "rel": [ "self" ], "href": "http://api.x.io/customers/pj123" }
+        ]
+      }
     }
   ],
   "actions": [
@@ -63,7 +66,7 @@ The media type for JSON Siren is `application/vnd.siren+json`.
 
 ##Introduction
 
-Siren is a hypermedia specification for representing entities.  As HTML is used for visually representing documents on a Web site, Siren is a specification for presenting entities via a Web API.  Siren offers structures to communicate information about entities, actions for executing state transitions, and links for client navigation.  
+Siren is a hypermedia specification for representing entities.  As HTML is used for visually representing documents on a Web site, Siren is a specification for presenting entities via a Web API.  Siren offers structures to communicate information about entities, actions for executing state transitions, and links for client navigation.
 
 Siren is intended to be a general specification of a generic media type that can be applied to other types that are not inherently hypermedia-powered.  The initial implementation is JSON Siren.  Other implementations, such as XML Siren, may also be implemented using the Siren specification.
 
@@ -104,7 +107,7 @@ A collection of action objects, represented in JSON Siren as an array such as `{
 ####`title`
 Descriptive text about the entity.  Optional.
 
-  
+
 ###Sub-Entities
 
 Sub-entities can be expressed as either an embedded link or an embedded representation.  In JSON Siren, sub-entities are represented by an `entities` array, such as `{ "entities": [{ ... }] }`.
@@ -113,9 +116,9 @@ Sub-entities can be expressed as either an embedded link or an embedded represen
 
 A sub-entity that's an embedded link may contain the following:
 
-#####`class`
+#####`id`
 
-Describes the nature of an entity's content based on the current representation.  Possible values are implementation-dependent and should be documented.  MUST be an array of strings.  Optional.
+The id of the sub-entity.  Optional.
 
 #####`rel`
 
@@ -134,7 +137,11 @@ Descriptive text about the entity.  Optional.
 
 ####Embedded Representation
 
-Embedded sub-entity representations retain all the characteristics of a standard entity, but MUST also contain a `rel` attribute describing the relationship of the sub-entity to its parent.
+Unlike an embedded link, a sub-entity that's an embedded representation must contain an `entity` instead of an `href`:
+
+#####`entity`
+
+The embedded representation of the entity, retaining all the characteristics of a standard entity.  Required.
 
 ###Classes vs. Relationships
 
@@ -219,7 +226,7 @@ Describes aspects of the field based on the current representation.  Possible va
 The input type of the field. This may include any of the following [input types](http://www.w3.org/TR/html5/single-page.html#the-input-element) specified in HTML5:
 
 `hidden`, `text`, `search`, `tel`, `url`, `email`, `password`, `datetime`, `date`,
-`month`, `week`, `time`, `datetime-local`, 
+`month`, `week`, `time`, `datetime-local`,
 `number`, `range`, `color`, `checkbox`,
 `radio`, `file` 
 
