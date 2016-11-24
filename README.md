@@ -178,7 +178,7 @@ Actions show available behaviors an entity exposes.
 
 A string that identifies the action to be performed.  Action names MUST be unique within the set of actions for an entity. The behaviour of clients when parsing a Siren document that violates this constraint is undefined.  Required.
 
-###`class`
+###`title`
 
 Describes the nature of an action based on the current representation.  Possible values are implementation-dependent and should be documented.  MUST be an array of strings.  Optional.
 
