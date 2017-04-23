@@ -17,6 +17,12 @@
             "type": "string"
         },
         "properties": {
+            "additionalProperties": {
+                "anyOf": [
+                    { "$ref": "#/definitions/PropertyObject" },
+                    { "$ref": "#/definitions/PropertyValue" }
+                ]
+            },
             "description": "A set of key-value pairs that describe the state of an entity.",
             "type": "object"
         },
@@ -270,6 +276,27 @@
                     "type": "string"
                 }
             }
+        },
+        "PropertyObject": {
+            "description": "",
+            "type": "object",
+            "required": [
+                "title",
+                "value"
+            ],
+            "properties": {
+                "title": {
+                    "description": "Textual description of the property. Clients may use this as a label.",
+                    "type": "string"
+                },
+                "value": {
+                    "$ref": "#/definitions/PropertyValue"
+                }
+            }
+        },
+        "PropertyValue": {
+            "description": "A value assigned to the property.",
+            "type": [ "array", "boolean", "number", "string" ]
         },
         "RelValue": {
                "anyOf": [

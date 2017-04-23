@@ -17,9 +17,18 @@ The media type for JSON Siren is `application/vnd.siren+json`.
 {
   "class": [ "order" ],
   "properties": { 
-      "orderNumber": 42, 
-      "itemCount": 3,
-      "status": "pending"
+      "orderNumber": {
+        "title": "Order number",
+        "value": 42
+      },
+      "itemCount": {
+        "title": "Items ordered",
+        "value": 3
+      },
+      "status": {
+        "title": "Order status",
+        "pending"
+      }
   },
   "entities": [
     { 
@@ -85,7 +94,7 @@ Describes the nature of an entity's content based on the current representation.
 
 ####`properties`
 
-A set of key-value pairs that describe the state of an entity.  In JSON Siren, this is an object such as `{ "name": "Kevin", "age": 30 }`.  Optional.
+A set of key-value pairs that describe the state of an entity.  In JSON Siren, this can be an object such as `{ "name": "Kevin", "age": 30 }`.  If the value is an object, it MUST contain a `title` property for a human-readable description and a `value` property for the actual value.  Optional.
 
 #### `entities`
 
