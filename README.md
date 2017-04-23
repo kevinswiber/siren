@@ -1,7 +1,5 @@
 # Siren: a hypermedia specification for representing entities
 
-__Current version: 0.6.1__
-
 Your input is appreciated.  Feel free to file a GitHub Issue, a Pull Request, or contact us.  Thank you!
 
 - [Official Siren Google Group](https://groups.google.com/forum/#!forum/siren-hypermedia)
