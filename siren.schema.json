@@ -74,8 +74,7 @@
                     "format": "uri"
                 },
                 "type": {
-                    "description": "Defines media type of the linked sub-entity, per Web Linking (RFC5899).",
-                    "type": "string"
+                    "$ref": "#/definitions/MediaType"
                 },
                 "title": {
                     "description": "Descriptive text about the entity.",
@@ -266,10 +265,14 @@
                     "format": "uri"
                 },
                 "type": {
-                    "description": "Defines media type of the linked resource, per Web Linking (RFC5988).",
-                    "type": "string"
+                    "$ref": "#/definitions/MediaType"
                 }
             }
+        },
+        "MediaType": {
+            "description": "Defines media type of the linked resource, per Web Linking (RFC5988). For the syntax, see RFC2045 (section 5.1), RFC4288 (section 4.2), RFC6838 (section 4.2)",
+            "type": "string",
+            "pattern": "^(application|audio|image|message|model|multipart|text|video)\\/([A-Z]|[a-z]|[0-9]|[\\!\\#\\$\\&\\.\\+\\-\\^\\_]){1,127}(; ?(([\\!\\#\\$\\%\\&\\'\\(\\)\\*\\+-\\.\\/]|[0-9]|[A-Z]|[\\^\\_\\`\\]\\|]|[a-z]|[\\|\\~])+)+=((([\\!\\#\\$\\%\\&\\'\\(\\)\\*\\+-\\.\\/]|[0-9]|[A-Z]|[\\^\\_\\`\\]\\|]|[a-z]|[\\|\\~])+)|\"([\\!\\#\\$\\%\\&\\.\\(\\)\\*\\+\\,\\-\\.\\/]|[0-9]|[\\:\\;\\<\\=\\>\\?\\@]|[A-Z]|[\\[\\\\\\]\\^\\_\\`]|[a-z]|[\\{\\|\\}\\~])+\"))*$"
         },
         "RelValue": {
                "anyOf": [
