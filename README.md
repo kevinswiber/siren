@@ -89,7 +89,7 @@ A set of key-value pairs that describe the state of an entity.  In JSON Siren, t
 
 #### `entities`
 
-A collection of related sub-entities.  If a sub-entity contains an `href` value, it should be treated as an embedded link.  Clients may choose to optimistically load embedded links.  If no `href` value exists, the sub-entity is an embedded entity representation that contains all the characteristics of a typical entity.  One difference is that a sub-entity MUST contain a `rel` attribute to describe its relationship to the parent entity.
+A collection of related sub-entities.  If a sub-entity contains an `href` value, it should be treated as an embedded link.  Clients may choose to optimistically load embedded links.  If no `href` value exists, the sub-entity is an embedded entity representation that contains all the characteristics of a typical entity.
 
 In JSON Siren, this is represented as an array.  Optional.
 
@@ -134,7 +134,7 @@ Descriptive text about the entity.  Optional.
 
 #### Embedded Representation
 
-Embedded sub-entity representations retain all the characteristics of a standard entity, but MUST also contain a `rel` attribute describing the relationship of the sub-entity to its parent.
+Embedded sub-entity representations retain all the characteristics of a standard entity.
 
 ### Classes vs. Relationships
 
