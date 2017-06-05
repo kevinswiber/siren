@@ -83,7 +83,7 @@ Sub-entities that are embedded links MUST contain an `href` attribute with a val
 
 Describes the nature of an entity's content based on the current representation.  Possible values are implementation-dependent and should be documented.  MUST be an array of strings.  Optional.
 
-####`properties`
+#### `properties`
 
 A set of key-value pairs that describe the state of an entity.  In JSON Siren, this is an object such as `{ "name": "Kevin", "age": 30 }`.  Optional.
 
