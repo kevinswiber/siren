@@ -206,15 +206,15 @@ A collection of fields, expressed as an array of objects in JSON Siren such as `
 
 Fields represent controls inside of actions.  They may contain these attributes:
 
-#### name
+#### `name`
 
 A name describing the control.  Field names MUST be unique within the set of fields for an action. The behaviour of clients when parsing a Siren document that violates this constraint is undefined.  Required.
 
-### `class`
+#### `class`
 
 Describes aspects of the field based on the current representation.  Possible values are implementation-dependent and should be documented.  MUST be an array of strings.  Optional.
 
-#### type
+#### `type`
 
 The input type of the field. This may include any of the following [input types](http://www.w3.org/TR/html5/single-page.html#the-input-element) specified in HTML5:
 
@@ -225,11 +225,11 @@ The input type of the field. This may include any of the following [input types]
 
 When missing, the default value is `text`.  Serialization of these fields will depend on the value of the action's `type` attribute. See [`type`](#type) under Actions, above. Optional.
 
-#### value
+#### `value`
 
 A value assigned to the field.  Optional.
 
-#### title
+#### `title`
 
 Textual annotation of a field.  Clients may use this as a label.  Optional.
 
