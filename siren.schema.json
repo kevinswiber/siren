@@ -210,6 +210,13 @@
                             }
                         }
                     ]
+                },
+                "class": {
+                    "description": "Describes aspects of the field based on the current representation. Possible values are implementation-dependent and should be documented.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             }
         },
