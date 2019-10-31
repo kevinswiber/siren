@@ -5,6 +5,19 @@
     "description": "An Entity is a URI-addressable resource that has properties and actions associated with it. It may contain sub-entities and navigational links.",
     "type": "object",
     "properties": {
+        "$schema": {
+            "title": "JSON Schema to use",
+            "description": "Can be a local schema or a remote one (ie from http://schemastore.org)",
+            "oneOf": [
+                {
+                    "type": "string",
+                    "format": "uri"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
         "class": {
             "description": "Describes the nature of an entity's content based on the current representation. Possible values are implementation-dependent and should be documented.",
             "type": "array",
